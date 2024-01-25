@@ -1,0 +1,3 @@
+cd /home/twubi/demoPtycho_2
+matlab -nodisplay -r "profile on; demo_ptycho_my_RGD; profile off; profsave(profile('info'),'my_profile_results'); exit"
+
