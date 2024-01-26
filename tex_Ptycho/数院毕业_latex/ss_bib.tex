@@ -1,0 +1,186 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc} %article book report letter
+\usepackage{amssymb}
+\usepackage{extarrows}
+\usepackage{enumitem}
+\usepackage{ctex}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{framed}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\usepackage{graphicx}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{float}
+\usepackage{booktabs}
+
+%\usepackage[comma,square,super]{natbib}
+%\usepackage[super]{gbt7714}
+\usepackage{xcolor}
+\usepackage{subcaption}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{epstopdf}
+
+
+%\usepackage[comma,square,super]{natbib}
+%\usepackage{natbib}
+%\setcitestyle{authoryear,round}
+
+%\usepackage[numbers, sort&compress]{natbib}
+\usepackage{gbt7714}
+\bibliographystyle{gbt7714-numerical}
+
+%\usepackage[backend=biber,style=gb7714-2015ay]{biblatex}
+%\usepackage[backend=biber,style=gb7714-2015ay,gbnoauthor=true]{biblatex}
+
+\usepackage{hyperref}
+
+\geometry{top=3cm,bottom=3cm}
+
+\hypersetup{hidelinks,
+	colorlinks=true,
+	allcolors=black,
+	pdfstartview=Fit,
+	breaklinks=true
+}
+
+%\usepackage{listings,lstautogobble}
+
+%\usepackage{listings} 
+\usepackage{xcolor}
+
+%\usepackage{minted}
+
+
+\begin{document}
+	\thispagestyle{empty}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale=0.56]{SYSULogo.pdf}
+	\end{figure}
+	
+	\begin{center}
+		\textbf{{\fontsize{35pt}{0pt}本科生毕业论文 （设计）}}
+		
+		\Large \textbf{{\fontsize{25pt}{0pt}Undergraduate Graduation Thesis (Design)}}
+	\end{center}
+	
+	\begin{center}
+		\huge 题目：\textbf{\underline{层叠成像中的相位恢复问题}}
+		
+	
+	\end{center}
+	
+	\begin{quotation}
+		\large \noindent
+		院系 \\
+		School(Department)：\underline{~~~~~~~~~~~~~~~~~~数学学院~~~~~~~~~~~~~~~~~~~} \\
+		专业 \\
+		Major：\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~数学与应用数学~~~~~~~~~~~~~~~~} \\
+		学生姓名 \\
+		Student Name：\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~吴茼~~~~~~~~~~~~~~~~~~~~~~} \\
+		学号 \\
+		Student No：\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~17307053~~~~~~~~~~~~~~~~~~~~~} \\
+		指导教师（职称） \\
+		Supervisor(Title)：\underline{~~~~~~~~~~~~~~~~~李嘉 （副教授）~~~~~~~~~~~~~~~~~~~~~}
+	\end{quotation}
+	~\\
+	\begin{center}
+		时间：二零二二年四月十一日
+		
+		Date: April 11th 2022
+	\end{center}
+	
+	\newpage
+	\thispagestyle{empty}
+	\begin{center}
+		\Large  学术诚信声明
+	\end{center}
+	
+	\begin{large}
+	本人所呈交的毕业论文，是在导师的指导下，独立进行研究 工作所取得的成果，所有数据、图片资料均真实可靠。除文中已经注明引用的内容外，本论文不包含任何其他人或集体已经发表或撰写过的作品或成果。对本论文的研究作出重要贡献的个人和集体，均已在文中以明确的方式标明。本毕业论文的知识产权归属于培养单位。本人完全意识到本声明的法律结果由本人承担。\\ \\ \\
+	$~~~~~~~~~~~$本人签名：$~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$日期：
+	\end{large}
+	~\\ \\ \\
+	\begin{center}
+		\Large \textbf{Statement of Academic Integrity}
+	\end{center}
+
+	\begin{large}
+	I hereby acknowledge that the thesis submitted is a product of my own independent research under the supervision of my supervisor, and that all the data, statistics, pictures and materials are reliable and trust- worthy, and that all the previous research and sources are appropriately marked in the thesis, and that the intellectual property of the thesis be- longs to the school. I am fully aware of the legal effect of this statement. \\ \\ \\
+	$~~~~~~~~$Student Signature：$~~~~~~~~~~~~~~~~~~~~~~~~~~$Date：
+	\end{large}
+	\newpage
+	\thispagestyle{empty}
+	\begin{center}
+		\LARGE \textbf{层叠成像中的相位恢复问题}
+		
+	
+		%\LARGE \textbf{基于变量因子选择的中国 A 股市场量化交易研究}
+	\end{center}
+	\begin{center}
+		\textbf{摘要}
+	\end{center}
+	
+	%本文对中国A股市场量化交易进行分析，根据中国A股市场的股票定价因子对股价收益率进行预测。首先，在众多的定价因子进行选择，即特征选取和变量选取，目的是选择互相正交且重要的定价因子，对自变量进行降维，减少信息冗余，提高后续预测模型的训练精度；其次，将选取的特征作为输入，通过机器学习算法，比如常见的随机森林和神经网络等算法对下一期的股价进行预测；最后，根据预测的收益率，做多收益率最高的10\%的股票，做空收益率最低的10\%的股票，构造一个多空头寸的投资组合，对投资组合的收益率和夏普比率进行分析。
+		本文主要讨论偏相干层叠成像中的相位恢复问题。 根据被偏向干效应污染的无相位的衍射图序列， 恢复出真实图像和用于成像的探针。 为了刻画偏向干效应，选用了多种物理模型中的一个，并详细讨论了它与一般化的多模态模型间的关系。 将直观的交替投影方法改进为ADMM算法，并拓展到多个模态的情形。 我们进行了三个仿真数值实验验证了算法的有效性。
+		第一，模态逼近实验。 随着模态数目增加，逼近密度矩阵的精度提高，图像的恢复质量提升。算法恢复出来的模态与根据模型产生的标准答案高度相似。  第二，尝试在ADMM中加入正交化约束，避免搜索过程中不同模态的信息重叠，提升算法的效率。 第三， 有噪声的情形。 
+	
+	\textbf{关键词：相位恢复~  偏向干理论~ 层叠成像~ ADMM}
+	
+	\newpage
+	\thispagestyle{empty}
+	\begin{center}
+		\large \textbf{Partially coherent ptychography} ~\\ ~\\
+		\normalsize \textbf{Abstract}
+		This paper mainly discusses the phase recovery in partially coherent ptychography. The real image and the probe are recovered from the phase-free diffraction pattern sequence contaminated by the partially coherent effect. To characterize this effect, a 'phobe vibration' model is chosen and its relationship to a generalized model is discussed in detail. The alternative projection method is improved to an ADMM algorithm and extended to the case of multiple modes.
+		
+		We conducted three numerical experiments to verify the effectiveness of the algorithm. First, approximation by the modes. As the number of modes increases, the accuracy of approximating the density matrix increases, and the quality of the recovered image improves. The modes recovered by the algorithm are highly similar to the standard answer generated from the model. Second, try to add orthogonalization constraints in ADMM to avoid redundant information of different modes in the searching process. Third, noisy case.
+	\end{center}
+	
+
+	\textbf{Key words: Phase retrieval~  Coherence theory~ Ptychography~ ADMM}
+	
+	\newpage
+	\thispagestyle{empty}
+	\tableofcontents
+	
+	\newpage
+	\thispagestyle{empty}
+	\listoffigures
+	
+	\listoftables
+	
+	\newpage
+	\setcounter{page}{1}
+
+\cite{anderson2016robust}
+\cite{giglio2021asset}
+
+\newpage
+ \bibliographystyle{unsrtnat}
+ \bibliography{wt}
+ 
+ 
+
+	
+	
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+\end{document}
+
+
+
+
+

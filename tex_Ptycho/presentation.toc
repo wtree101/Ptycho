@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.14pt}
+\beamer@sectionintoc {1}{研究背景}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{层叠成像}{6}{0}{1}
+\beamer@sectionintoc {2}{偏向干层叠成像}{9}{0}{2}
+\beamer@subsectionintoc {2}{1}{模型}{11}{0}{2}
+\beamer@subsectionintoc {2}{2}{算法}{17}{0}{2}
+\beamer@subsectionintoc {2}{3}{数值实验}{24}{0}{2}
+\beamer@sectionintoc {3}{总结和讨论}{31}{0}{3}

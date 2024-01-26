@@ -1,0 +1,24 @@
+\BOOKMARK [1][-]{section.1}{Models}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Coherent model}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Specific partially coherent model}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Model1chang}{subsection.1.2}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Model2psf}{subsection.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.3}{General partially coherent model}{section.1}% 6
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Decompositon model}{subsection.1.3}% 7
+\BOOKMARK [1][-]{section.2}{ADMM-based numerical algorithm}{}% 8
+\BOOKMARK [2][-]{subsection.2.1}{Subproblems w and u}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.2}{Subproblem z}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.3}{Subproblem D and }{section.2}% 11
+\BOOKMARK [1][-]{section.3}{Numerical experiments}{}% 12
+\BOOKMARK [2][-]{subsection.3.1}{Experiment setting}{section.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Parameters}{subsection.3.1}% 14
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Performance metrics}{subsection.3.1}% 15
+\BOOKMARK [3][-]{subsubsection.3.1.3}{Operations on modes}{subsection.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.2}{Approximation by modes}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.3}{Add orthogonalization constraint}{section.3}% 18
+\BOOKMARK [2][-]{subsection.3.4}{Noisy case}{section.3}% 19
+\BOOKMARK [1][-]{section.4}{Appendix}{}% 20
+\BOOKMARK [2][-]{subsection.4.1}{Subproblems in ADMM}{section.4}% 21
+\BOOKMARK [3][-]{subsubsection.4.1.1}{}{subsection.4.1}% 22
+\BOOKMARK [3][-]{subsubsection.4.1.2}{z}{subsection.4.1}% 23
+\BOOKMARK [3][-]{subsubsection.4.1.3}{D}{subsection.4.1}% 24

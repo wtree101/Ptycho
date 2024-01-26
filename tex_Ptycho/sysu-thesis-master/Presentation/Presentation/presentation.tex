@@ -1,0 +1,157 @@
+\documentclass[aspectratio=169,t,xcolor=table,bottom=5cm]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+
+\usetheme{Ufg}
+
+%-------------------------------------theorems--------------
+\newtheorem*{conj}{Conj.}
+\newtheorem*{teo}{Thm.}
+\newtheorem*{lema}{Lemma}
+\newtheorem*{prop}{Prop.}
+\newtheorem*{cor}{Cor.}
+\newtheorem*{ex}{Example}
+\newtheorem*{exer}{Exercise}
+
+\theoremstyle{definition}
+\newtheorem*{defi}{Def.}
+
+\setbeamertemplate{theorems}[numbered]
+
+
+%-------------------------------------------------------------%
+%----------------------- Primary Definitions -----------------%
+
+% This command set the default Color, is also possible to choose a custom color
+\setPrimaryColor{UFGBlue} 
+
+%First one is logo in title slide (we recommend use a horizontal image), and second one is the logo used in the remaining slides (we recommend use a square image)
+\setLogos{lib/logos/infw.png}{lib/logos/sysu_w} 
+
+
+% --------------------------------------Title Slide Information
+\begin{document}
+\title[Pre]{Domain Adaptation for Semantic Segmentation in Automonous Driving}
+\subtitle{Thesis Defence}
+
+\author{Yang LI}
+
+\institute[SYSU] % (optional)
+{School of Mathematics, Sun Yat-sen University \\ Deep Vision Lab, Hong Kong University of Science and Tenchnology}
+\date{\today}
+%-----------------------The next statement creates the title page.
+\frame[noframenumbering]{\titlepage}
+
+
+
+%------------------------------------------------Slide1
+\setLayout{horizontal} %This command define the layout. 'horizontal' can be replace with 'vertical', 'blank, 'mainpoint', 'titlepage'
+
+%---------------------------------------------------------
+
+%---------------------------------------------------------Slide2
+\section{Motivation}
+\setLayout{mainpoint}
+\begin{frame}{Motivation}
+\end{frame}
+
+\setLayout{horizontal}
+\begin{frame}[allowframebreaks]
+	\frametitle{Basic Notions}
+	\vspace{-2cm}
+	\begin{defi}[Topology] 
+		A \textbf{topology} on a set $X$ is a set $\tau$ of subsets of $X$ , called open sets, with the properties: (1) The union of an arbitrary family of open sets is open. (2) The intersection of a finite family of open sets is open. (3) The empty set ; and $X$ are open.
+	\end{defi}
+	$<X,\tau>$ is called a topology space.
+	
+	\framebreak
+	
+	\begin{defi}[Basis]
+		A subset $\mathscr{B}$ of a topology $\tau$ is a basis of $\tau$ iff. each $U$ is a union of elements of $\mathscr{B}$.
+	\end{defi}
+	\vspace{-2em}
+	\begin{defi}[Continuous]
+		$f: X \to Y$ is continuous iff. $U \in Y$ is open $\Longrightarrow$ $f^{-1}(U) \in X$ is open. 
+	\end{defi}
+	\framebreak
+	
+	\begin{defi}[Quotient Map]
+		$f: X \to Y$ is \textit{onto}, $f$ is a quotient map iff. $V \in Y$ is open $\iff$ $f^{-1}(V)$ is open. 
+	\end{defi}
+	
+	
+	
+\end{frame}
+
+
+%---------------------------------------------------------
+
+%--------------------------------------------------------- Slide3
+
+
+
+% \setBGColor{DarkOrange}
+
+%---------------------------------------------------------
+
+
+%--------------------------------------------------------- Slide3
+%Two columns
+\setLayout{blank}
+
+
+
+\setLayout{vertical}
+
+%---------------------------------------------------------
+
+
+%---------------------------------------------------------Slide4
+%Highlighting text
+%---------------------------------------------------------
+
+
+
+
+%---------------------------------------------------------Slide5
+\section{Method}
+\setBGColor{DarkOrange}
+\setLayout{mainpoint}
+
+\begin{frame}{Method}
+\end{frame}
+
+\setLayout{horizontal}
+
+
+%-------------------------------------------------------
+
+
+
+%---------------------------------------------------------Slide7
+\section{Quantitative Results}
+% Example of changing background color 
+\setBGColor{DarkPurple}
+
+\setLayout{mainpoint}
+\begin{frame}{Quantitative Results}
+\end{frame}
+
+\setLayout{horizontal}
+
+%---------------------------------------------------------
+
+\setBGColor{DarkGray}
+\setLayout{blank}
+\begin{frame}{Thank you for listening!}
+\end{frame}
+
+%---------------------------------
+%\setLayout{titlepage}
+%\setBGColor{DarkGray}
+%\titlepage
+%-------------------------------------
+\end{document}

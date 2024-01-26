@@ -1,0 +1,178 @@
+
+\documentclass[UTF8]{beamer}
+%\usepackage{subfigure}
+\usepackage{url}   % 网页链接
+\usepackage{subcaption}
+%\usepackage[space,space,hyperref]{ctex}
+%\usepackage{ctex} %可以改成中文版
+\captionsetup{font={small}}
+\usetheme{Warsaw}
+\author{Tong Wu}
+\title{Partially coherent ptychography}
+%\institute{Sun yat-sen University, China}
+\begin{document}
+\frame{\titlepage}
+\tableofcontents
+
+
+\begin{frame}[c]\frametitle{Coherent model}
+
+
+\begin{equation}
+\label{basic}
+f_{j}=\left|\mathcal{F}\left( \mathcal{S}_{j} u  \circ \omega \right)\right|^{2} 
+\end{equation}
+
+In a discrete setting, $u \in \mathbb{C}^{n}$ is a 2D image with $\sqrt{n} \times \sqrt{n}$ pixels, $\omega \in \mathbb{C}^{\bar{m}}$ is a localized 2D probe with $\sqrt{\bar{m}} \times \sqrt{\bar{m}}$ pixels.
+
+$f_{j} \in \mathbb{R}_{+}^{\bar{m}}(\forall 0 \leq j \leq J-1)$ is a stack of phaseless measurements. Here $|\cdot|$ represents the element-wise absolute value of a vector, o denotes the elementwise multiplication, and $\mathcal{F}$ denotes the normalized 2 dimensional discrete Fourier transform. Each $\mathcal{S}_{j} \in \mathbb{R}^{\bar{m} \times n}$ is a binary matrix that crops a region $j$ of size $\bar{m}$ from the image $u$.
+
+
+\end{frame}
+
+\begin{frame}[c]\frametitle{Partially coherent model: a general one}
+\framesubtitle{Thibault, Pierre, and Andreas Menzel. "Reconstructing state mixtures from diffraction measurements." Nature 494.7435 (2013): 68-71.}
+
+
+
+\structure{Blind ptychography model + quantum state tomography\footnote{\url{https://homepage.univie.ac.at/reinhold.bertlmann/pdfs/T2_Skript_Ch_9corr.pdf} Many symbols in quantum mechanics are included here.}.}
+
+Phobe $w$ is assumed to be in mixed state to represent partially coherent effect.
+
+\begin{equation}
+\label{sep} 
+\begin{aligned}
+&\mbox{Find } u, r \mbox{ othogonal $w_k$   }s.t. \\
+&f_{p c, j}=\sum_{k=1}^r \left|\mathcal{F}\left( \mathcal{S}_{j} u \circ \left(\omega_k\right) \right)\right|^{2}  
+\end{aligned}
+\end{equation}
+
+
+\end{frame}
+
+\begin{frame}[c]\frametitle{Algorithm —— ePIE}
+
+
+
+\noindent \textbf{Step1: Fourier magnitude projection}
+
+We have used the shorthand notation $\tilde{\phi}=\mathcal{F}[\phi]$. Taking the form
+$$
+\begin{aligned}
+\psi_{j \mathbf{x}}^{(k)} &=\bar{\Pi}_{F}\left(\phi_{j \mathbf{x}}^{(0)}, \phi_{j \mathbf{x}}^{(1)}, \ldots, \phi_{j \mathbf{x}}^{\left(r=M_{\mathrm{p}}\right)}\right) \\
+&=\mathcal{F}^{-1}\left[\sqrt{I_{j \mathbf{q}}} \frac{\tilde{\phi}_{j \mathbf{q}}^{(k)}}{\sqrt{\sum_{k}\left|\tilde{\phi}_{j \mathbf{q}}^{(k)}\right|^{2}}}\right]
+\end{aligned}
+$$
+again with
+$$
+\tilde{\phi}_{j \mathbf{q}}^{(k)}=\mathcal{F}\left[P_{\mathbf{x}}^{(k)} O_{\mathbf{x}-\mathbf{x}_{j}}\right]
+$$
+
+
+\end{frame}
+\begin{frame}
+
+\noindent \textbf{Step2: Overlap projection}
+
+$$
+\begin{aligned}
+&O_{\mathbf{x}}=\frac{\sum_{k} \sum_{j} P_{\mathbf{x}+\mathbf{x}_{j}}^{(k) *} \psi_{j, \mathbf{x}+\mathbf{x}_{j}}^{(k)}}{\sum_{k} \sum_{j}\left|P_{\mathbf{x}+\mathbf{x}_{j}}^{(k)}\right|^{2}} \\
+&P_{\mathbf{x}}^{(k)}=\frac{ \sum_{j} O_{\mathbf{x}-\mathbf{x}_{j}}^{*} \psi_{j \mathbf{x}}^{(k)}}{ \sum_{j}\left|O_{\mathbf{x}-\mathbf{x}_{j}}\right|^{2}}
+\end{aligned}
+$$
+solved numerically by applying them sequentially for a few iterations.
+
+
+\end{frame}
+
+\begin{frame}{Outcome}
+
+%\begin{figure}[H]   % 必须要有[h]否则插入的图片都在文字前面
+%    \centering  % 图像居中
+%    \includegraphics[width=6cm]{outcome/clipboard.png}%[]里可以指定影像大小
+%    \caption{Probes $w_k$ and $u$}    % 图名
+%    \label{1}  % 用于内部引用的图名
+%\end{figure}
+\end{frame}
+
+
+\begin{frame}\frametitle{Another form}
+
+
+Denote $O_j \in C^{\bar{m} \times \bar{m}}$ as a (diagonal) matrix to represent linear transform to $w$, s.t. $\mathcal{S}_{j} u \circ \omega = O_j w$. Denote $f_q^* \in C^{1 \times \bar{m}}$ as a row vector  constructed from Fourier transform $\mathcal{F}$, to represent projection on frepuency element. Construct measurement matrix $ \mathcal{I}_{j \mathbf{q}} = O_j^*f_qf_q^*O_j$ and density matrix $\rho$, we get another form(actually a natural one in quantum state tomography) of the model:
+
+
+
+\begin{equation}
+\label{lift}
+\begin{aligned}
+&\mbox{Find } O_j,\rho,s.t.\\
+&f_{pc,j}(q) = Tr(\mathcal{I}_{j \mathbf{q}} \rho )\\
+&\rho \mbox{ is positive semi-definite, with rank}\leq r 
+\end{aligned}
+\end{equation}
+
+\end{frame}
+
+\begin{frame}\frametitle{Derivation}
+
+ Simple calculation process:
+$$
+f_{pc,j}(q) = |f_q^*O_j w|^2 = (f_q^*O_j w)^*(f_q^*O_j w) = w^*(O_j^*f_qf_q^*O_j)w
+$$
+$$
+=Tr[w^*(O_j^*f_qf_q^*O_j)w]=Tr[(O_j^*f_qf_q^*O_j) (ww^*)]
+$$
+$$
+=Tr(  \mathcal{I}_{j \mathbf{q}} \rho )
+$$
+
+
+When $w$ is in pure state(a vector in Hilbert space), $\rho=ww^*$ is a rank-one matirx. In partially coherent case, \textbf{we use mixed state to model $w$}.  Mixed state is represented by \textbf{generalizing the density matrix to one with higher rank}: 
+$$
+\rho = \sum_{k=1}^{r} w_k w_k^*
+$$
+$$
+ f_{pc,j}(q) = \operatorname{Tr} \mathcal{I}_{j \mathbf{q}} \rho
+ = \operatorname{Tr}[ \mathcal{I}_{j \mathbf{q}}  \sum_{k=1}^{r} w_k w_k^*]
+=
+\sum_{k=1}^r w_k^*\mathcal{I}_{j \mathbf{q}} w_k 
+=
+\sum_{k=1}^r |f_q^*O_j w_k|^2 
+$$
+
+And that is exactly \eqref{sep}$
+ f_{pc,j}=\sum_{k=1}^r \left|\mathcal{F}\left( \mathcal{S}_{j} u \circ \left(\omega_k\right) \right)\right|^{2}  
+$. 
+\end{frame}
+\begin{frame} \frametitle{Further explaination about mixed state}
+ Fow example, with probability 0.5 in state $\psi_1$ and 0.5 in $\psi_2$ ($\psi_1$ and $\psi_2$ are not neccesarily orthogonal here). Now $w$ can no longer be represented by a vector(ps. $w \neq p_1\psi_1 + p_2 \psi_2$, the latter is still a determined pure state vector).
+ 
+ $$
+ \rho = \sum_k p_k \psi_k \psi_k^*
+ $$
+ 
+ 
+ 
+ Easy to find $\rho$ is a positive semi-definite matrix, we can decompose $\rho$ using spectral theorem, with $r$(rank of $\rho$) othogonal state $w_k$:
+ 
+ $$
+ \rho = \sum_{k=1}^{r} w_k w_k^*
+ $$
+ 
+\end{frame}
+\begin{frame} \frametitle{Related work}
+\framesubtitle{Fannjiang, Albert, and Thomas Strohmer. "The numerics of phase retrieval." Acta Numerica 29 (2020): 125-228. 6.3. Low-rank phase retrieval problems.}
+
+The phase retrieval problem has a natural
+generalization to recovering low-rank positive semidefinite matrices.
+More precisely, we are concerned with the task of reconstructing a finite-dimensional quantum mechanical system which is fully characterized
+by its density operator $\rho$ (an n x n positive semidefinite matrix with trace one.)
+\framesubtitle{Fannjiang, Albert, and Thomas Strohmer. "The numerics of phase retrieval." Acta Numerica 29 (2020): 125-228. 6.3. Low-rank phase retrieval problems.}
+
+
+
+
+\end{frame}
+
+\end{document}

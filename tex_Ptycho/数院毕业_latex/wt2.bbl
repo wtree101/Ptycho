@@ -1,0 +1,57 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Chang et~al.(2018)Chang, Enfedaque, Lou, and Marchesini]{chang}
+Huibin Chang, Pablo Enfedaque, Yifei Lou, and Stefano Marchesini.
+\newblock Partially coherent ptychography by gradient decomposition of the
+  probe.
+\newblock \emph{Acta Crystallographica Section A: Foundations and Advances},
+  74\penalty0 (3):\penalty0 157--169, 2018.
+
+\bibitem[Konijnenberg(2017)]{psf}
+Sander Konijnenberg.
+\newblock An introduction to the theory of ptychographic phase retrieval
+  methods.
+\newblock \emph{Advanced Optical Technologies}, 6\penalty0 (6):\penalty0
+  423--438, 2017.
+
+\bibitem[Fannjiang and Strohmer(2020)]{all}
+Albert Fannjiang and Thomas Strohmer.
+\newblock The numerics of phase retrieval.
+\newblock \emph{Acta Numerica}, 29:\penalty0 125--228, 2020.
+
+\bibitem[Chang et~al.(2019)Chang, Enfedaque, and Marchesini]{admm}
+Huibin Chang, Pablo Enfedaque, and Stefano Marchesini.
+\newblock Blind ptychographic phase retrieval via convergent alternating
+  direction method of multipliers.
+\newblock \emph{SIAM Journal on Imaging Sciences}, 12\penalty0 (1):\penalty0
+  153--185, 2019.
+
+\bibitem[Wolf(1982)]{theory}
+Emil Wolf.
+\newblock New theory of partial coherence in the space--frequency domain. part
+  i: spectra and cross spectra of steady-state sources.
+\newblock \emph{JOSA}, 72\penalty0 (3):\penalty0 343--351, 1982.
+
+\bibitem[Griffiths and Schroeter(2018)]{quan}
+David~J Griffiths and Darrell~F Schroeter.
+\newblock \emph{Introduction to quantum mechanics}.
+\newblock Cambridge university press, 2018.
+
+\bibitem[Thibault and Menzel(2013)]{mix}
+Pierre Thibault and Andreas Menzel.
+\newblock Reconstructing state mixtures from diffraction measurements.
+\newblock \emph{Nature}, 494\penalty0 (7435):\penalty0 68--71, 2013.
+
+\bibitem[Tian et~al.(2014)Tian, Li, Ramchandran, and Waller]{direct}
+Lei Tian, Xiao Li, Kannan Ramchandran, and Laura Waller.
+\newblock Multiplexed coded illumination for fourier ptychography with an led
+  array microscope.
+\newblock \emph{Biomedical optics express}, 5\penalty0 (7):\penalty0
+  2376--2389, 2014.
+
+\end{thebibliography}
