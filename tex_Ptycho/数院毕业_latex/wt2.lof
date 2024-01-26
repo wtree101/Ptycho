@@ -1,8 +1,0 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Recovered images\relax }}{16}{figure.caption.8}
-\contentsline {figure}{\numberline {2}{\ignorespaces R and snr. \relax }}{17}{figure.caption.9}
-\contentsline {figure}{\numberline {3}{\ignorespaces 模态分解。 第一行代表“标准模态分解”。 最后两行代表 12 种模态的具体样式。 这里的模态被表示在在时域中，除了最后一行在频域中。\relax }}{17}{figure.caption.10}
-\contentsline {figure}{\numberline {4}{\ignorespaces 标准密度矩阵的奇异值分布。 左边子图中的纵轴代表$i^{th}$最大奇异值与第一个$s_i/s_1$的比值，右边的纵轴代表$S_{cum}(i)$。 奇异值呈指数下降，矩阵近似低秩。 \relax }}{18}{figure.caption.11}
-\contentsline {figure}{\numberline {5}{\ignorespaces \relax }}{19}{figure.caption.12}
-\contentsline {figure}{\numberline {6}{\ignorespaces 纵轴和横轴在 R 因子的第一个子图中以对数刻度设置。 蓝线代表 $\beta _2/\beta =1000$，在这种情况下效果最好。 绿线表示没有正交化的结果。 “ort 1”表示每 20 次迭代执行一次正交化。 \relax }}{20}{figure.caption.13}
-\contentsline {figure}{\numberline {7}{\ignorespaces Reconstructed images in the noisy case\relax }}{21}{figure.caption.14}
-\contentsline {figure}{\numberline {8}{\ignorespaces R and snr. The red line represents the result with compression.\relax }}{21}{figure.caption.15}
